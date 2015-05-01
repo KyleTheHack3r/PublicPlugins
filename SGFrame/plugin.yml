@@ -1,0 +1,33 @@
+name: SGFrame
+main: SurvivalGame\Main
+version: "1.0.0(Test Version)"
+api: [1.0.0]
+load: POSTWORLD
+author: KyleTheHack3r
+commands:
+ sg:
+  permission: SG.command.sg
+  description: SG Main Command
+  usage: /sg <join|quit>
+ lobby:
+  permission: SG.command.lobby
+  description: back to lobby
+  usage: /lobby
+permissions:
+ SG.*:
+  description: the main permission
+  default: op
+  children:
+   SG.command.*:
+    description: use commands in plugin
+    default: op
+    children:
+     SG.command.lobby:
+      description: back to lobby
+      default: true
+     SG.command.sg:
+      description: set SG
+      default: op
+   SG.touch.startgame:
+    description: click the sign and join a game
+    default: true
